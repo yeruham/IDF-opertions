@@ -10,12 +10,6 @@ namespace IDF_opertions
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-            Console.WriteLine("basic project");
-=======
-
-            Console.WriteLine("Hwllo IDF.");
->>>>>>> e2af0824b98e4b15ad8d67173bc4246d10df3daa
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IDF_opertions
 {
-    internal interface Iweapon
+    public interface Iweapon
     {
         string Name { get; set; }
         int PowerLevel { get; set; }
