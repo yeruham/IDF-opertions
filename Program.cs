@@ -10,8 +10,6 @@ namespace IDF_opertions
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Hwllo IDF.");
         }
     }
 }
