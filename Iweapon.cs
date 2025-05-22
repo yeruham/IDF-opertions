@@ -1,5 +1,4 @@
-﻿
-public interface Iweapon
+﻿public interface Iweapon
 {
     string Name { get; set; }
     int PowerLevel { get; set; }
