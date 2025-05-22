@@ -2,7 +2,7 @@
 
 public class F16 : Plane
 {
-    public F16(double typeBomb) : base("F16", 10, "buildings", typeBomb, 1, 50, 8)
+    public F16(double bombWight) : base("F16", 10, "buildings", bombWight, 1, 50, 8)
     {
     }
 
