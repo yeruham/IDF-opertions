@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Artillery : Iweapon, IBomberWeapon
+public class Artillery : /*Iweapon,*/ IBomberWeapon
 {
     public string Name { get; set; }
     public int PowerLevel { get; set; }

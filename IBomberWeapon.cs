@@ -1,4 +1,4 @@
-﻿public interface IBomberWeapon
+﻿public interface IBomberWeapon : Iweapon
 {
     double Bombweight { get; set; }
     int BombsAtOnce { get; set; }
