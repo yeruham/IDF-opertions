@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Common;
 using System.Reflection.Emit;
 using System.Threading;
@@ -15,6 +16,7 @@ public class AMAN
         {
             int riskLevel = this.RiskLevel(terorist);
             DataTerorist newData = new DataTerorist(terorist, riskLevel);
+            dataTerrorists.Add(newData);
         }
     }
 
@@ -30,19 +32,34 @@ public class AMAN
         return riskLevel;
     }
 
+
+    public void report(string terorist, string location)
+    {
+        DateTime now = DateTime.Now;
+        foreach (DataTerorist data in dataTerrorists)
+        {
+            if (data.terorist.name == terorist)
+            {
+                data.report(location, now);
+                break;
+            }
+        }
+    }
+
+
     public List<DataTerorist> getDataTerrorists()
     {
-        List<DataTerorist> newDataTerrorists = new List<DataTerorist>();
+        List<DataTerorist> terroristsToKill = new List<DataTerorist>();
 
         foreach (DataTerorist data in dataTerrorists)
         {
             if (data.terorist.isAlive && data.locations.Count > 0)
             {
-                newDataTerrorists.Add(data);
+                terroristsToKill.Add(data);
             }
         }
 
-        return newDataTerrorists;
+        return terroristsToKill;
     }
 }
 
@@ -50,17 +67,17 @@ public class DataTerorist
 {
     public Ifigher terorist;
     public List<string> locations = new List<string>();
-    public string time;
+    public DateTime time;
     public int numRepurts = 0;
     public int riskLevel;
 
     public DataTerorist(Ifigher terorist, int riskLevel)
     {
         this.terorist = terorist;
-        this.riskLevel = rating;
+        this.riskLevel = riskLevel;
     }
 
-    public void report(string location, string time)
+    public void report(string location, DateTime time)
     {
         this.locations.Add(location);
         this.time = time;
