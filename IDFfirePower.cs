@@ -9,7 +9,16 @@ public class IDFfirePower: Iorganization
 
 
     private List<Iweapon> weapons = new List<Iweapon>();
-    
+
+    public IDFfirePower()
+    {
+        this.uniqueName = "IDFfirePower";
+        this.SinceThan = 1950;
+        this.commander = "Eyal Zamir";
+        this.organizationOf = "I.D.F";
+
+    }
+
     public void addWeapons(Iweapon weapon)
     {
         weapons.Add(weapon);
