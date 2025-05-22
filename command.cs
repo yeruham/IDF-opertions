@@ -81,14 +81,16 @@ public class IDFcommand
     {
         DataTerorist mostDangerous = terroristsToKill[0];
         List<DataTerorist> cannotBeKill = new List<DataTerorist>();
-        int risklevel = 0;
+        int risklevel;
         bool killed = false;
 
         do
         {
+            risklevel = 0;
             Console.WriteLine("the action start!!");
             foreach (DataTerorist data in terroristsToKill)
             {
+                Console.WriteLine("terorist -----  " + data.terorist.name);
                 if (data.riskLevel > risklevel && !cannotBeKill.Contains(data))
                 {
                     Console.WriteLine($"the risk is {data.riskLevel}");
@@ -105,7 +107,7 @@ public class IDFcommand
                 if (weapon.EffectiveFor == mostDangerous.locations[mostDangerous.locations.Count - 1])
                 {
                     killed = weapon.Attack();
-                    Console.WriteLine($"The terrorist {mostDangerous.terorist.name} was eliminated");
+                    Console.WriteLine($"The terrorist {mostDangerous.terorist.name} was eliminated with {weapon.Name}");
                     break;
                 }
             }

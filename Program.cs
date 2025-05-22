@@ -32,10 +32,10 @@ namespace IDF_opertions
             firePower.addWeapons(cannon);
             AMAN aman = new AMAN(hamas);
             aman.report("mochmad", "buildings");
-            //aman.report("mochmad", "home");
+            aman.report("mochmad", "home");
             aman.report("abdalla", "buildings");
             aman.report("yosuf", "home");
-            aman.report("yosuf", "buildings");
+            aman.report("yosuf", "open areas");
             IDFcommand command = new IDFcommand(aman , firePower);
             command.getDataOfTerorist();
             command.getAttackTools();
