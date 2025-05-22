@@ -1,9 +1,10 @@
 ﻿public interface IBomberWeapon
 {
-    int Bombweight { get; set; }
-    int ThrowsInABlow { get; set; }
+    double Bombweight { get; set; }
+    int BombsAtOnce { get; set; }
     int FuelSupply { get; set; }
-    string BombBalance { get; set; }
+    int RemainingAttacks { get; set; }
 
+    bool Attack();
 }
 
