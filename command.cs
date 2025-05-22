@@ -24,7 +24,7 @@ public class IDFcommand
         Ifigher mostReports = terroristsToKill[0].terorist;
         foreach(DataTerorist data in terroristsToKill)
         {
-            if (data.numReports > numReport)
+            if (data.numRepurts > numReport)
             {
                 mostReports = data.terorist;
             }
@@ -42,7 +42,7 @@ public class IDFcommand
             {
                 Console.Write(Weapon.Name + ", ");
             }
-            Console.Write($"num reports: {data.numReports}. he was in locations: ");
+            Console.Write($"num reports: {data.numRepurts}. he was in locations: ");
             foreach(string location in data.locations)
             {
                 Console.Write(location + ", ");

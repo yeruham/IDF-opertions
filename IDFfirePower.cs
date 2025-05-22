@@ -8,7 +8,7 @@ public class IDFfirePower: Iorganization
     public string organizationOf { get; set; }
 
 
-    private List<Iweapon> weapons = new List<Iweapon>();
+    private List<IBomberWeapon> weapons = new List<IBomberWeapon>();
 
     public IDFfirePower()
     {
@@ -19,17 +19,17 @@ public class IDFfirePower: Iorganization
 
     }
 
-    public void addWeapons(Iweapon weapon)
+    public void addWeapons(IBomberWeapon weapon)
     {
         weapons.Add(weapon);
     }
 
-    public void removeWeapons(Iweapon weapon)
+    public void removeWeapons(IBomberWeapon weapon)
     {
         weapons.Remove(weapon);
     }
 
-    public List<Iweapon> getWeapons()
+    public List<IBomberWeapon> getWeapons()
     {
         return weapons;
     }

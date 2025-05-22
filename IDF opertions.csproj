@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AMAN.cs" />
     <Compile Include="Artillery.cs" />
+    <Compile Include="command.cs" />
     <Compile Include="Drone.cs" />
     <Compile Include="Hamas.cs" />
     <Compile Include="IBomberWeapon.cs" />
