@@ -40,7 +40,7 @@ public class Cannon : Artillery
 
 public class Zik : Drone
 {
-    public Zik(string target, object typeBomb) : base("Zik", 6, "people, vehicles", ArmamentType(target), 1, 20, 3)
+    public Zik(string target) : base("Zik", 6, "people, vehicles", ArmamentType(target), 1, 20, 3)
     {
 
     }

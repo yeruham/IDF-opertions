@@ -12,7 +12,7 @@ namespace IDF_opertions
         {
             Rifle rifle = new Rifle("m16", 3, "man");
             Knife knife = new Knife("ledarman", 1, "man");
-            F16 f16 = new F16();
+            F16 f16 = new F16(1);
             Cannon cannon = new Cannon();
             Zik zik = new Zik("man");
             Hamas hamas = new Hamas();
