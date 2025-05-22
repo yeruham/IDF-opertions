@@ -107,6 +107,7 @@ public class IDFcommand
                 if (weapon.EffectiveFor == mostDangerous.locations[mostDangerous.locations.Count - 1])
                 {
                     killed = weapon.Attack();
+                    mostDangerous.terorist.isAlive = false;
                     Console.WriteLine($"The terrorist {mostDangerous.terorist.name} was eliminated with {weapon.Name}");
                     break;
                 }
