@@ -52,10 +52,31 @@ public class IDFcommand
         return terroristsToKill;
     }
 
+    public List<IBomberWeapon> getAttackTools()
+    {
+        foreach (IBomberWeapon weapon in attackTools)
+        {
+            Console.WriteLine($"tool: {weapon}");
+        }
+            return attackTools;
+    }
+
     public List<IBomberWeapon> AvailableAttackTools()
     {
-        return attackTools;
+        List<IBomberWeapon> availableTools = new List<IBomberWeapon>();
+        bool isAvailable;
+        foreach (IBomberWeapon weapon in attackTools)
+        {
+            isAvailable = weapon.Attack();
+            if (isAvailable)
+            {
+                availableTools.Add(weapon);
+            }
+        }
+        return availableTools;
     }
+
+
 
 
 }
