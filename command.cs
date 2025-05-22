@@ -18,10 +18,10 @@ public class IDFcommand
     }
 
     
-    public Ifigher teroristWithMostReports()
+    public Terorist teroristWithMostReports()
     {
         int numReport = 0;
-        Ifigher mostReports = terroristsToKill[0].terorist;
+        Terorist mostReports = terroristsToKill[0].terorist;
         foreach(DataTerorist data in terroristsToKill)
         {
             if (data.numRepurts > numReport)
@@ -35,9 +35,10 @@ public class IDFcommand
 
     public List<DataTerorist> getDataOfTerorist()
     {
+        Console.WriteLine(terroristsToKill.Count);
         foreach (DataTerorist data in terroristsToKill)
         {
-            Console.Write($"terorist: {data.terorist.name}. rank: {data.terorist.rank} weapons: ");
+            Console.Write($"terorist: {data.terorist.name}. rank: {data.terorist.rank} risk: {data.riskLevel} weapons: ");
             foreach (Iweapon Weapon in data.terorist.weapons)
             {
                 Console.Write(Weapon.Name + ", ");
@@ -76,7 +77,7 @@ public class IDFcommand
         return availableTools;
     }
 
-    public Ifigher ection()
+    public Terorist ection()
     {
         DataTerorist mostDangerous = terroristsToKill[0];
         List<DataTerorist> cannotBeKill = new List<DataTerorist>();
@@ -85,9 +86,12 @@ public class IDFcommand
 
         do
         {
+            Console.WriteLine("the action start!!");
             foreach (DataTerorist data in terroristsToKill)
             {
+                if (data.riskLevel > risklevel && !cannotBeKill.Contains(data))
                 {
+                    Console.WriteLine($"the risk is {data.riskLevel}");
                     mostDangerous = data;
                     risklevel = data.riskLevel;
                 }
@@ -102,6 +106,7 @@ public class IDFcommand
                 {
                     killed = weapon.Attack();
                     Console.WriteLine($"The terrorist {mostDangerous.terorist.name} was eliminated");
+                    break;
                 }
             }
             

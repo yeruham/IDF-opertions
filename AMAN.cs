@@ -10,17 +10,18 @@ public class AMAN
 
     public AMAN(Hamas hamas)
     {
-        List<Ifigher> terrorists = hamas.getTerrorists();
+        List<Terorist> terrorists = hamas.getTerrorists();
 
-        foreach (Ifigher terorist in terrorists)
+        foreach (Terorist terorist in terrorists)
         {
             int riskLevel = this.RiskLevel(terorist);
             DataTerorist newData = new DataTerorist(terorist, riskLevel);
             dataTerrorists.Add(newData);
         }
+        Console.WriteLine(dataTerrorists.Count);
     }
 
-    public int RiskLevel(Ifigher terorist)
+    public int RiskLevel(Terorist terorist)
     {
         int riskLevel = 0;
         foreach (Iweapon weapon in terorist.weapons)
@@ -58,6 +59,7 @@ public class AMAN
                 terroristsToKill.Add(data);
             }
         }
+        Console.WriteLine("terorist to kill " +terroristsToKill.Count);
 
         return terroristsToKill;
     }
@@ -65,13 +67,13 @@ public class AMAN
 
 public class DataTerorist
 {
-    public Ifigher terorist;
+    public Terorist terorist;
     public List<string> locations = new List<string>();
     public DateTime time;
     public int numRepurts = 0;
     public int riskLevel;
 
-    public DataTerorist(Ifigher terorist, int riskLevel)
+    public DataTerorist(Terorist terorist, int riskLevel)
     {
         this.terorist = terorist;
         this.riskLevel = riskLevel;
@@ -81,6 +83,7 @@ public class DataTerorist
     {
         this.locations.Add(location);
         this.time = time;
+        numRepurts++;
     }
 
 

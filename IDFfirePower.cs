@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 public class IDFfirePower: Iorganization
 {
@@ -31,6 +32,11 @@ public class IDFfirePower: Iorganization
 
     public List<IBomberWeapon> getWeapons()
     {
+        foreach (IBomberWeapon weapon in weapons)
+        {
+            Console.Write(weapon.PowerLevel + " ----- ");
+        }
+        Console.WriteLine();
         return weapons;
     }
 }
