@@ -10,6 +10,39 @@ namespace IDF_opertions
     {
         static void Main(string[] args)
         {
+            Rifle rifle = new Rifle("m16", 3, "man");
+            Knife knife = new Knife("ledarman", 1, "man");
+            F16 f16 = new F16();
+            Cannon cannon = new Cannon();
+            Zik zik = new Zik("man");
+            Hamas hamas = new Hamas();
+            Terorist terorist1 = new Terorist("mochmad", 5, true, new List<Iweapon> { rifle, knife});
+            Terorist terorist2 = new Terorist("macmud", 3, true, new List<Iweapon> { rifle, knife });
+            Terorist terorist3 = new Terorist("abdalla", 1, true, new List<Iweapon> { rifle });
+            Terorist terorist4 = new Terorist("ibraim", 2, true, new List<Iweapon> { knife });
+            Terorist terorist5 = new Terorist("yosuf", 3, true, new List<Iweapon> { rifle});
+            hamas.addTerrorist(terorist5);
+            hamas.addTerrorist(terorist4);
+            hamas.addTerrorist(terorist3);
+            hamas.addTerrorist(terorist2);
+            hamas.addTerrorist(terorist1);
+            IDFfirePower firePower = new IDFfirePower();
+            firePower.addWeapons(zik);
+            firePower.addWeapons(f16);
+            firePower.addWeapons(cannon);
+            AMAN aman = new AMAN(hamas);
+            aman.report("mochmad", "buildings");
+            //aman.report("mochmad", "home");
+            aman.report("abdalla", "buildings");
+            aman.report("yosuf", "home");
+            aman.report("yosuf", "buildings");
+            IDFcommand command = new IDFcommand(aman , firePower);
+            command.getDataOfTerorist();
+            command.getAttackTools();
+            command.ection();
+
+
+
         }
     }
 }

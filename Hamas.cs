@@ -7,7 +7,7 @@ public class Hamas : Iorganization
     public string commander { get; set; }
     public string organizationOf { get; set; }
  
-    private List<Ifigher> terrorists = new List<Ifigher>();
+    private List<Terorist> terrorists = new List<Terorist>();
 
     public Hamas()
     {
@@ -18,17 +18,17 @@ public class Hamas : Iorganization
 
     }
 
-    public void addTerrorist(Ifigher terrorist)
+    public void addTerrorist(Terorist terrorist)
     {
         terrorists.Add(terrorist);
     }
 
-    public void removeTerrorist(Ifigher terrorist)
+    public void removeTerrorist(Terorist terrorist)
     {
         terrorists.Remove(terrorist);
     }
 
-    public List<Ifigher> getTerrorists()
+    public List<Terorist> getTerrorists()
     {
         return terrorists;
     }

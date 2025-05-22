@@ -18,10 +18,10 @@ public class IDFcommand
     }
 
     
-    public Ifigher teroristWithMostReports()
+    public Terorist teroristWithMostReports()
     {
         int numReport = 0;
-        Ifigher mostReports = terroristsToKill[0].terorist;
+        Terorist mostReports = terroristsToKill[0].terorist;
         foreach(DataTerorist data in terroristsToKill)
         {
             if (data.numRepurts > numReport)
@@ -35,9 +35,10 @@ public class IDFcommand
 
     public List<DataTerorist> getDataOfTerorist()
     {
+        Console.WriteLine(terroristsToKill.Count);
         foreach (DataTerorist data in terroristsToKill)
         {
-            Console.Write($"terorist: {data.terorist.name}. rank: {data.terorist.rank} weapons: ");
+            Console.Write($"terorist: {data.terorist.name}. rank: {data.terorist.rank} risk: {data.riskLevel} weapons: ");
             foreach (Iweapon Weapon in data.terorist.weapons)
             {
                 Console.Write(Weapon.Name + ", ");
@@ -52,10 +53,69 @@ public class IDFcommand
         return terroristsToKill;
     }
 
+    public List<IBomberWeapon> getAttackTools()
+    {
+        foreach (IBomberWeapon weapon in attackTools)
+        {
+            Console.WriteLine($"tool: {weapon.Name}. ");
+        }
+            return attackTools;
+    }
+
     public List<IBomberWeapon> AvailableAttackTools()
     {
-        return attackTools;
+        List<IBomberWeapon> availableTools = new List<IBomberWeapon>();
+        bool isAvailable;
+        foreach (IBomberWeapon weapon in attackTools)
+        {
+            isAvailable = weapon.Attack();
+            if (isAvailable)
+            {
+                availableTools.Add(weapon);
+            }
+        }
+        return availableTools;
     }
+
+    public Terorist ection()
+    {
+        DataTerorist mostDangerous = terroristsToKill[0];
+        List<DataTerorist> cannotBeKill = new List<DataTerorist>();
+        int risklevel = 0;
+        bool killed = false;
+
+        do
+        {
+            Console.WriteLine("the action start!!");
+            foreach (DataTerorist data in terroristsToKill)
+            {
+                if (data.riskLevel > risklevel && !cannotBeKill.Contains(data))
+                {
+                    Console.WriteLine($"the risk is {data.riskLevel}");
+                    mostDangerous = data;
+                    risklevel = data.riskLevel;
+                }
+            }
+            cannotBeKill.Add(mostDangerous);
+
+            List<IBomberWeapon> availableTools = AvailableAttackTools();
+
+            foreach (IBomberWeapon weapon in availableTools)
+            {
+                if (weapon.EffectiveFor == mostDangerous.locations[mostDangerous.locations.Count - 1])
+                {
+                    killed = weapon.Attack();
+                    Console.WriteLine($"The terrorist {mostDangerous.terorist.name} was eliminated");
+                    break;
+                }
+            }
+            
+        } while (!killed && cannotBeKill.Count < terroristsToKill.Count);
+        
+        return mostDangerous.terorist;
+    }
+
+
 
 
 }
