@@ -2,7 +2,7 @@
 
 public class F16 : Plane
 {
-    public F16() : base("F16", 10, "buildings", 0.5, 1, 50, 8)
+    public F16(double typeBomb) : base("F16", 10, "buildings", typeBomb, 1, 50, 8)
     {
     }
 
@@ -20,7 +20,7 @@ public class F16 : Plane
 
 public class Cannon : Artillery
 {
-    public Cannon() : base("F16", 10, "buildings", 0.5, 1, 50, 8)
+    public Cannon() : base("Cannon", 8, "open areas", "explosive shells",4 , 50, 40)
     {
     }
 
@@ -40,18 +40,18 @@ public class Cannon : Artillery
 
 public class Zik : Drone
 {
-    public Zik(string target) : base("F16", 10, "buildings", WeightCalculator(target), 1, 50, 8)
+    public Zik(string target, object typeBomb) : base("Zik", 6, "people, vehicles", ArmamentType(target), 1, 20, 3)
     {
 
     }
 
-    private static double WeightCalculator(string target)
+    private static double ArmamentType(string target)
     {
         if (target == "man")
         {
-            return 0.2;
-        }
             return 0.1;
+        }
+            return 0.3;
     }
 
     public override bool Attack()
