@@ -56,7 +56,7 @@ public class IDFcommand
     {
         foreach (IBomberWeapon weapon in attackTools)
         {
-            Console.WriteLine($"tool: {weapon}");
+            Console.WriteLine($"tool: {weapon.Name}. ");
         }
             return attackTools;
     }
@@ -74,6 +74,40 @@ public class IDFcommand
             }
         }
         return availableTools;
+    }
+
+    public Ifigher ection()
+    {
+        DataTerorist mostDangerous = terroristsToKill[0];
+        List<DataTerorist> cannotBeKill = new List<DataTerorist>();
+        int risklevel = 0;
+        bool killed = false;
+
+        do
+        {
+            foreach (DataTerorist data in terroristsToKill)
+            {
+                {
+                    mostDangerous = data;
+                    risklevel = data.riskLevel;
+                }
+            }
+            cannotBeKill.Add(mostDangerous);
+
+            List<IBomberWeapon> availableTools = AvailableAttackTools();
+
+            foreach (IBomberWeapon weapon in availableTools)
+            {
+                if (weapon.EffectiveFor == mostDangerous.locations[mostDangerous.locations.Count - 1])
+                {
+                    killed = weapon.Attack();
+                    Console.WriteLine($"The terrorist {mostDangerous.terorist.name} was eliminated");
+                }
+            }
+            
+        } while (!killed && cannotBeKill.Count < terroristsToKill.Count);
+        
+        return mostDangerous.terorist;
     }
 
 
