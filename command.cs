@@ -19,7 +19,7 @@ public class IDFcommand
         this.attackTools = firePower.getWeapons();
     }
 
-    
+    //return and write the terorist with most report of location
     public Terorist teroristWithMostReports()
     {
         int numReport = 0;
@@ -35,6 +35,7 @@ public class IDFcommand
         return mostReports;
     }
 
+    //return and write the most dangerus terorist ( terorist with the highest risk level )
     public Terorist mostDangerous()
     {
         DataTerorist dangerous = allterorists[0];
@@ -49,6 +50,7 @@ public class IDFcommand
         return dangerous.terorist;
     }
 
+    //return and write the most senior terorist ( terorist with the highest rank )
     public Terorist mostSenior()
     {
         Terorist senior = allterorists[0].terorist;
@@ -63,6 +65,7 @@ public class IDFcommand
         return senior;
     }
 
+    //return and write all terorist with all information about them
     public List<DataTerorist> getDataOfTerorist()
     {
         foreach (DataTerorist data in allterorists)
@@ -92,6 +95,8 @@ public class IDFcommand
         return allterorists;
     }
 
+    //return and write all attack tools
+
     public List<IBomberWeapon> getAttackTools()
     {
         foreach (IBomberWeapon weapon in attackTools)
@@ -101,6 +106,7 @@ public class IDFcommand
             return attackTools;
     }
 
+    //return and write only available attack tools
     public List<IBomberWeapon> AvailableAttackTools()
     {
         List<IBomberWeapon> availableTools = new List<IBomberWeapon>();
@@ -116,6 +122,8 @@ public class IDFcommand
         return availableTools;
     }
 
+    // gets the name of a terrorist. and And kill him if he exists, and there is a suitable attack tool available.
+    // return Bool answer if the killing was successful.
     public bool killTerrorist(string name)
     {
         DataTerorist teroristToKill = terroristsToKill[0];
@@ -159,6 +167,7 @@ public class IDFcommand
         return false;
     }
 
+    // looking for the most dangerous terrorist that can be eliminated, return the terorist who was killed.
     public Terorist action()
     {
         DataTerorist mostDangerous = terroristsToKill[0];
