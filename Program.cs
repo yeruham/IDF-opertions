@@ -35,11 +35,13 @@ namespace IDF_opertions
             aman.report("mochmad", "home");
             aman.report("abdalla", "buildings");
             aman.report("yosuf", "home");
-            aman.report("yosuf", "open areas");
+            aman.report("yosuf",  "hiding");
             IDFcommand command = new IDFcommand(aman , firePower);
             command.getDataOfTerorist();
             command.getAttackTools();
-            command.ection();
+            command.action();
+            command.killTerrorist("yeruham");
+            command.killTerrorist("yosuf");
 
 
 

@@ -32,11 +32,11 @@ public class IDFfirePower: Iorganization
 
     public List<IBomberWeapon> getWeapons()
     {
-        foreach (IBomberWeapon weapon in weapons)
-        {
-            Console.Write(weapon.PowerLevel + " ----- ");
-        }
-        Console.WriteLine();
+        //foreach (IBomberWeapon weapon in weapons)
+        //{
+        //    Console.Write(weapon.PowerLevel + " ----- ");
+        //}
+        //Console.WriteLine();
         return weapons;
     }
 }
