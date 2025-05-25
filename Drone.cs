@@ -23,4 +23,12 @@ public class Drone : /*Iweapon, */IBomberWeapon
 
     public virtual bool Attack() { return false; }
 
+    public bool availabilityCheck()
+    {
+        if (FuelSupply <= 0 || RemainingAttacks <= 0)
+        {
+            return false;
+        }
+        return true;
+    }
 }

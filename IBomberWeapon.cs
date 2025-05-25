@@ -7,5 +7,7 @@
 
     bool Attack();
 
+    bool availabilityCheck();
+
 }
 

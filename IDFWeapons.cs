@@ -8,11 +8,13 @@ public class F16 : Plane
 
     public override bool Attack()
     {
-        if (this.FuelSupply <= 0)
+        if (FuelSupply <= 0 || RemainingAttacks <= 0)
         {
             return false;
         }
 
+        RemainingAttacks -= 1;
+        FuelSupply -= 6;
         return true;
 
     }
@@ -26,7 +28,7 @@ public class Cannon : Artillery
 
     public override bool Attack()
     {
-        if (FuelSupply <= 0)
+        if (FuelSupply <= 0 || RemainingAttacks <= 0)
         {
             return false;
         }
@@ -56,11 +58,13 @@ public class Zik : Drone
 
     public override bool Attack()
     {
-        if (this.FuelSupply <= 0)
+        if (this.FuelSupply <= 0 || RemainingAttacks <= 0)
         {
             return false;
         }
 
+        RemainingAttacks -= 1;
+        FuelSupply -= 6;
         return true;
     }
 
