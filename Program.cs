@@ -36,16 +36,9 @@ namespace IDF_opertions
             aman.report("yosuf", "home");
             aman.report("yosuf",  "hiding");
             IDFcommand command = new IDFcommand(aman , firePower);
-            command.getDataOfTerorist();
-            command.getAttackTools();
-            command.action();
-            command.killTerrorist("yeruham");
-            command.killTerrorist("yosuf");
-            command.mostDangerous();
-            command.mostSenior();
 
-
-
+            Menu menu = new Menu(command);
+            menu.displayMenu();
         }
     }
 }

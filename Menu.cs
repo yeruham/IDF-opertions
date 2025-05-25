@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 public class Menu
 {
-
-    static void showMenu()
+    IDFcommand command;
+    public Menu(IDFcommand command)
     {
-        string[] mainMenu = { "--- Information ---", "--- updating ---", "--- action ---" };
+        this.command = command;
+    }
+
+    static void showMainMenu()
+    {
+        string[] mainMenu = { "--- Information ---", "--- action ---" };
         foreach(string option in mainMenu)
         {
             Console.WriteLine(option);
@@ -41,6 +46,7 @@ public class Menu
                 finalChoos = Convert.ToInt32(choose);
             }else if(choose == "exit")
             {
+                finalChoos = 0;
                 break;
             }
         } while (finalChoos <= firstNum || finalChoos > lastNum);
@@ -51,10 +57,15 @@ public class Menu
     {
         int firstChoos;
         int innerMenu;
+        string terroristName  = "";
         do
         {
-            showMenu();
+            showMainMenu();
             firstChoos = userInput(0, 2);
+            if(firstChoos == 0)
+            {
+                break;
+            }
             showInnerMenu(firstChoos);
             if(firstChoos == 1)
             {
@@ -62,28 +73,37 @@ public class Menu
             }
             else{
                 innerMenu = userInput(0,2);
+                innerMenu += 10;
             }
+            if(innerMenu == 11)
+            {
+                Console.WriteLine("Pleas enter the name of the terrorist.");
+                terroristName = Console.ReadLine();
+            }
+            activateSelection(innerMenu, terroristName);
 
         } while (firstChoos != 0);
 
     }
 
-    public void activateSelection(int innerMenu)
+    public void activateSelection(int innerMenu, string terorist)
     {
         switch (innerMenu)
         {
             case 1:
-
+                command.getDataOfTerorist();
                 break;
             case 2:
+                command.mostSenior();
                 break;
             case 3:
+                command.mostDangerous();
                 break;
-            case 4:
+            case 11:
+                command.killTerrorist(terorist);
                 break;
-            case 5:
-                break;
-            case 6:
+            case 12:
+                command.action();
                 break;
         }
     }
