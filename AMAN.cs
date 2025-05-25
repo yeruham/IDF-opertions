@@ -51,8 +51,13 @@ public class AMAN
         }
     }
 
-    //return list with DataTerorist, only those whose location was accepted
     public List<DataTerorist> getDataTerrorists()
+    {
+        return this.dataTerrorists;
+    }
+
+    //return list with DataTerorist, only those whose location was accepted
+    public List<DataTerorist> getDataTerroristsWithLocation()
     {
         List<DataTerorist> terroristsToKill = new List<DataTerorist>();
 

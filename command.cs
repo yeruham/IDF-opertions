@@ -13,7 +13,7 @@ public class IDFcommand
     {
         this.aman = aman;
         this.firePower = firePower;
-        this.terroristsToKill = aman.getDataTerrorists();
+        this.terroristsToKill = aman.getDataTerroristsWithLocation();
         this.attackTools = firePower.getWeapons();
     }
 
