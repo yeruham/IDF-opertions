@@ -68,7 +68,7 @@ public class IDFcommand
         bool isAvailable;
         foreach (IBomberWeapon weapon in attackTools)
         {
-            isAvailable = weapon.Attack();
+            isAvailable = weapon.availabilityCheck();
             if (isAvailable)
             {
                 availableTools.Add(weapon);
