@@ -35,6 +35,34 @@ public class IDFcommand
         return mostReports;
     }
 
+    public Terorist mostDangerous()
+    {
+        DataTerorist dangerous = allterorists[0];
+        foreach (DataTerorist data in allterorists)
+        {
+            if (data.terorist.isAlive && data.riskLevel > dangerous.riskLevel)
+            {
+                dangerous = data;
+            }
+        }
+        Console.WriteLine($"the most dangerus terorist is {dangerous.terorist.name}. it has a risk level of {dangerous.riskLevel}.");
+        return dangerous.terorist;
+    }
+
+    public Terorist mostSenior()
+    {
+        Terorist senior = allterorists[0].terorist;
+        foreach (DataTerorist data in allterorists)
+        {
+            if (data.terorist.isAlive && data.terorist.rank > senior.rank)
+            {
+                senior = data.terorist;
+            }
+        }
+        Console.WriteLine($"the most senior terorist is {senior.name}. his rank is {senior.rank}");
+        return senior;
+    }
+
     public List<DataTerorist> getDataOfTerorist()
     {
         foreach (DataTerorist data in allterorists)
