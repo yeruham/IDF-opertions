@@ -6,8 +6,10 @@ using System.Threading;
 
 public class AMAN
 {
+    //list variable with data about all terorist 
     private List<DataTerorist> dataTerrorists = new List<DataTerorist>();
 
+    //constractor that take list with all terorists from Hamas and turns each one to DataTerorist (class with information about terorist)
     public AMAN(Hamas hamas)
     {
         List<Terorist> terrorists = hamas.getTerrorists();
@@ -18,9 +20,10 @@ public class AMAN
             DataTerorist newData = new DataTerorist(terorist, riskLevel);
             dataTerrorists.Add(newData);
         }
-        Console.WriteLine(dataTerrorists.Count);
+        //Console.WriteLine(dataTerrorists.Count);
     }
 
+    //Calculate the risk level of a terrorist
     public int RiskLevel(Terorist terorist)
     {
         int riskLevel = 0;
@@ -34,6 +37,7 @@ public class AMAN
     }
 
 
+    //receives information about a terrorist's location, and saves it with a timestamp
     public void report(string terorist, string location)
     {
         DateTime now = DateTime.Now;
@@ -47,7 +51,7 @@ public class AMAN
         }
     }
 
-
+    //return list with DataTerorist, only those whose location was accepted
     public List<DataTerorist> getDataTerrorists()
     {
         List<DataTerorist> terroristsToKill = new List<DataTerorist>();
@@ -59,7 +63,7 @@ public class AMAN
                 terroristsToKill.Add(data);
             }
         }
-        Console.WriteLine("terorist to kill " +terroristsToKill.Count);
+        //Console.WriteLine("terorist to kill " +terroristsToKill.Count);
 
         return terroristsToKill;
     }
