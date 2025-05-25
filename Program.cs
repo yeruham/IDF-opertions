@@ -24,25 +24,21 @@ namespace IDF_opertions
             hamas.addTerrorist(terorist5);
             hamas.addTerrorist(terorist4);
             hamas.addTerrorist(terorist3);
-            hamas.addTerrorist(terorist2);
             hamas.addTerrorist(terorist1);
+            hamas.addTerrorist(terorist2);
             IDFfirePower firePower = new IDFfirePower();
             firePower.addWeapons(zik);
             firePower.addWeapons(f16);
             firePower.addWeapons(cannon);
             AMAN aman = new AMAN(hamas);
             aman.report("mochmad", "buildings");
-            aman.report("mochmad", "home");
             aman.report("abdalla", "buildings");
             aman.report("yosuf", "home");
-            aman.report("yosuf", "open areas");
+            aman.report("yosuf",  "hiding");
             IDFcommand command = new IDFcommand(aman , firePower);
-            command.getDataOfTerorist();
-            command.getAttackTools();
-            command.ection();
 
-
-
+            Menu menu = new Menu(command);
+            menu.displayMenu();
         }
     }
 }

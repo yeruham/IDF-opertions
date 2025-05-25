@@ -51,6 +51,7 @@ public class AMAN
         }
     }
 
+    //return list wite data about terrorist's (DataTerorist to each one) 
     public List<DataTerorist> getDataTerrorists()
     {
         return this.dataTerrorists;
