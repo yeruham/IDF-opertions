@@ -39,7 +39,7 @@ public class Menu
         int finalChoos = 0;
         do
         {
-            Console.WriteLine($"please enter a number of the menu, to exit press 'exit'.");
+            Console.WriteLine(lastNum == 3 ?"please enter a number of the menu, to exit press 'exit'.": "Select the desired action.");
             choose = Console.ReadLine();
             if(int.TryParse(choose, out int resoult))
             {

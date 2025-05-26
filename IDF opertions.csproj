@@ -45,12 +45,14 @@
   <ItemGroup>
     <Compile Include="AMAN.cs" />
     <Compile Include="Artillery.cs" />
+    <Compile Include="Cannon.cs" />
     <Compile Include="command.cs" />
     <Compile Include="Drone.cs" />
+    <Compile Include="F16.cs" />
     <Compile Include="Hamas.cs" />
     <Compile Include="IBomberWeapon.cs" />
     <Compile Include="IDFfirePower.cs" />
-    <Compile Include="IDFWeapons.cs" />
+    <Compile Include="Zik.cs" />
     <Compile Include="Ifighter.cs" />
     <Compile Include="Iorganization.cs" />
     <Compile Include="Iweapon.cs" />
