@@ -10,7 +10,7 @@ public class Menu
 
     static void showMainMenu()
     {
-        string[] mainMenu = { "--- Information ---", "--- action ---" };
+        string[] mainMenu = { "1--- Information ---", "2--- action ---" };
         foreach(string option in mainMenu)
         {
             Console.WriteLine(option);
