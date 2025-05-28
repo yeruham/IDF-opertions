@@ -43,28 +43,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AMAN.cs" />
-    <Compile Include="Artillery.cs" />
-    <Compile Include="Cannon.cs" />
-    <Compile Include="command.cs" />
-    <Compile Include="Drone.cs" />
-    <Compile Include="F16.cs" />
-    <Compile Include="Hamas.cs" />
-    <Compile Include="HamasFactorycs.cs" />
-    <Compile Include="IBomberWeapon.cs" />
-    <Compile Include="IDFfirePower.cs" />
-    <Compile Include="M16.cs" />
-    <Compile Include="Zik.cs" />
-    <Compile Include="Ifighter.cs" />
-    <Compile Include="Iorganization.cs" />
-    <Compile Include="Iweapon.cs" />
-    <Compile Include="Knife.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="IDFForces\AMAN.cs" />
+    <Compile Include="BombWeapons\ParentsClasses\Artillery.cs" />
+    <Compile Include="BombWeapons\Cannon.cs" />
+    <Compile Include="IDFForces\command.cs" />
+    <Compile Include="BombWeapons\ParentsClasses\Drone.cs" />
+    <Compile Include="BombWeapons\F16.cs" />
+    <Compile Include="Hamas\Hamas.cs" />
+    <Compile Include="Hamas\HamasFactorycs.cs" />
+    <Compile Include="IDFForces\FirePowerFactory.cs" />
+    <Compile Include="Interfaces\IBomberWeapon.cs" />
+    <Compile Include="IDFForces\IDFfirePower.cs" />
+    <Compile Include="Weapons\M16.cs" />
+    <Compile Include="Hamas\Terorist.cs" />
+    <Compile Include="BombWeapons\Zik.cs" />
+    <Compile Include="Interfaces\Ifighter.cs" />
+    <Compile Include="Interfaces\Iorganization.cs" />
+    <Compile Include="Interfaces\Iweapon.cs" />
+    <Compile Include="Weapons\Knife.cs" />
+    <Compile Include="Menegers\Menu.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
-    <Compile Include="plane.cs" />
+    <Compile Include="BombWeapons\ParentsClasses\Plane.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rifle.cs" />
+    <Compile Include="Weapons\Rifle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
