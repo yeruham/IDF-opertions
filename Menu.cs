@@ -21,10 +21,10 @@ public class Menu
     {
         Dictionary<int, string[]> InnerMenu = new Dictionary<int, string[]>
         {
-            {1, new string[] {"..Information about all terrorists..",
-                              "..Information about the most senior terrorist..",
-                              "..The most dangerous terrorist.." }},
-            {2, new string[] { "..Elimination of a terrorist by name..", "..Automatic elimination.."} },
+            {1, new string[] {"1..Information about all terrorists..",
+                              "2..Information about the most senior terrorist..",
+                              "3..The most dangerous terrorist.." }},
+            {2, new string[] { "1..Elimination of a terrorist by name..", "2..Automatic elimination.."} },
         };
 
         foreach(string innerChoos in InnerMenu[choose])
