@@ -50,8 +50,10 @@
     <Compile Include="Drone.cs" />
     <Compile Include="F16.cs" />
     <Compile Include="Hamas.cs" />
+    <Compile Include="HamasFactorycs.cs" />
     <Compile Include="IBomberWeapon.cs" />
     <Compile Include="IDFfirePower.cs" />
+    <Compile Include="M16.cs" />
     <Compile Include="Zik.cs" />
     <Compile Include="Ifighter.cs" />
     <Compile Include="Iorganization.cs" />
