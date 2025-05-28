@@ -1,5 +1,8 @@
 # 🪖 IDF Operations
 
+
+![IDF Strike](https://raw.githubusercontent.com/yeruham/IDF-opertions/master/ChatGPT%20Image%20May%2028,%202025,%2012_02_38%20PM.png)
+
 מערכת המדמה מבצע צבאי של צה"ל, תוך שימוש בכלי נשק, מטוסים, מל"טים ויחידות לוחמה שונות.
 
 ---
